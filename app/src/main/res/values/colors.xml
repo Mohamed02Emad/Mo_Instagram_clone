@@ -9,8 +9,10 @@
     <color name="white">#D9D6DA</color>
     <color name="dark_purple">#833AB4</color>
     <color name="orange">#FCAF45</color>
+    <color name="grey">#ececec</color>
 
-<!--    custom-->
+    <!--    custom-->
+    <color name="grey_222">#C6C4C6</color>
     <color name="background">#D9D6DA</color>
     <color name="font">#100F0F</color>
 
