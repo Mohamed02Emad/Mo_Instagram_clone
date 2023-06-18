@@ -71,19 +71,19 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.homeFragment -> {
-                    viewPager.setCurrentItem(0, true)
+                    viewPager.setCurrentItem(0, false)
                 }
                 R.id.exploreFragment -> {
-                    viewPager.setCurrentItem(1, true)
+                    viewPager.setCurrentItem(1, false)
                 }
                 R.id.newPostFragment -> {
-                    viewPager.setCurrentItem(2, true)
+                    viewPager.setCurrentItem(2, false)
                 }
                 R.id.reelsFragment -> {
-                    viewPager.setCurrentItem(3, true)
+                    viewPager.setCurrentItem(3, false)
                 }
                 R.id.profileFragment -> {
-                    viewPager.setCurrentItem(4, true)
+                    viewPager.setCurrentItem(4, false)
                 }
             }
             true
