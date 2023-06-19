@@ -1,10 +1,13 @@
 package com.mo_insta.instagramclone.presentation.adapters
 
 import android.graphics.Color
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.VideoView
 import androidx.viewpager.widget.PagerAdapter
@@ -27,9 +30,7 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
         videoView.setBackgroundColor(Color.TRANSPARENT)
 
 
-
-        setViews(itemView,video)
-
+        setViews(itemView, video)
         videoViews.add(videoView)
         container.addView(itemView)
         return itemView
@@ -59,6 +60,26 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
         val userName = itemView.findViewById<TextView>(R.id.tv_user_name)
         userName.text = video.username
 
+
+        val progressBar = itemView.findViewById<ProgressBar>(R.id.progress)
+        val videoView = itemView.findViewById<VideoView>(R.id.video_view)
+
+        videoView.setOnPreparedListener { mediaPlayer ->
+            val duration = mediaPlayer.duration
+            progressBar.max = duration
+
+            val handler = Handler(Looper.getMainLooper())
+            handler.postDelayed(object : Runnable {
+                override fun run() {
+                        val currentPosition = videoView.currentPosition
+                        progressBar.progress = currentPosition
+                        if (currentPosition < duration) {
+                            handler.postDelayed(this, 100)
+                        }
+                }
+            }, 50)
+
+        }
 
     }
 
