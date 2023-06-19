@@ -1,6 +1,7 @@
 package com.mo_insta.instagramclone.presentation.adapters
 
 import android.graphics.Color
+import android.media.MediaPlayer
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
@@ -10,14 +11,19 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.VideoView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.viewpager.widget.PagerAdapter
 import com.mo_insta.instagramclone.R
 import com.mo_insta.instagramclone.data.models.Post
-import com.mo_insta.instagramclone.presentation.verticalViewPager.VerticalViewPager
+import com.mo_insta.instagramclone.presentation.customViews.VerticalViewPager
+import kotlinx.coroutines.*
 
 class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
 
     private val videoViews = mutableListOf<VideoView>()
+    private var isSoundOn = true
+    private var job: Job? = null
+    private var myMediaPlayer:MediaPlayer? = null
 
     override fun instantiateItem(container: ViewGroup, position: Int): Any {
         val itemView = LayoutInflater.from(container.context).inflate(
@@ -28,7 +34,6 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
         val videoPath = "android.resource://" + "com.mo_insta.instagramclone" + "/${video.video}"
         videoView.setVideoPath(videoPath)
         videoView.setBackgroundColor(Color.TRANSPARENT)
-
 
         setViews(itemView, video)
         videoViews.add(videoView)
@@ -71,15 +76,39 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
             val handler = Handler(Looper.getMainLooper())
             handler.postDelayed(object : Runnable {
                 override fun run() {
-                        val currentPosition = videoView.currentPosition
-                        progressBar.progress = currentPosition
-                        if (currentPosition < duration) {
-                            handler.postDelayed(this, 100)
-                        }
+                    val currentPosition = videoView.currentPosition
+                    progressBar.progress = currentPosition
+                    if (currentPosition < duration) {
+                        handler.postDelayed(this, 50)
+                    }
                 }
             }, 50)
 
         }
+
+        val parent = itemView.findViewById<ConstraintLayout>(R.id.views_parent)
+        val sound = itemView.findViewById<ImageView>(R.id.iv_sound)
+        parent.setOnClickListener {
+            job?.let { it.cancel() }
+
+            isSoundOn = !isSoundOn
+            if (isSoundOn) {
+               myMediaPlayer?.setVolume(1f,1f)
+                sound.setImageResource(R.drawable.ic_sound_on)
+            } else {
+                myMediaPlayer?.setVolume(0f,0f)
+
+                sound.setImageResource(R.drawable.ic_sound_off)
+            }
+
+
+            job = CoroutineScope(Dispatchers.Main).launch {
+                sound.visibility = View.VISIBLE
+                delay(800)
+                sound.visibility = View.INVISIBLE
+            }
+        }
+
 
     }
 
@@ -102,6 +131,16 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
             val videoView = videoViews[i]
             if (i == currentItem) {
                 if (!videoView.isPlaying) {
+                    try {
+                        val mediaPlayerField = VideoView::class.java.getDeclaredField("mMediaPlayer")
+                        mediaPlayerField.isAccessible = true
+                         myMediaPlayer = mediaPlayerField.get(videoView) as MediaPlayer?
+                        if (isSoundOn) {
+                            myMediaPlayer?.setVolume(1f,1f)
+                        } else {
+                            myMediaPlayer?.setVolume(0f,0f)
+                        }
+                     } catch (_: Exception) { }
                     videoView.seekTo(0)
                     videoView.start()
                 }

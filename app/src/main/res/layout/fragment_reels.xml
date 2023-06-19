@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".presentation.reelsFragment.ReelsFragment">
 
-    <com.mo_insta.instagramclone.presentation.verticalViewPager.VerticalViewPager
+    <com.mo_insta.instagramclone.presentation.customViews.VerticalViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +21,6 @@
         android:src="@drawable/ic_camera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:tint="@color/font" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

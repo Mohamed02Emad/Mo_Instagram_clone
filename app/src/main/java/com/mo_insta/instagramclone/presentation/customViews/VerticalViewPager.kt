@@ -1,4 +1,4 @@
-package com.mo_insta.instagramclone.presentation.verticalViewPager
+package com.mo_insta.instagramclone.presentation.customViews
 
 import android.content.Context
 import android.util.AttributeSet
