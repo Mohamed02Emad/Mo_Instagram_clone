@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".presentation.profileFragment.viewPagerFragments.SavedReelsFragment">
-
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="saved reels" />
+        android:text="Share a moment"
+        android:textColor="@color/font"
+        android:textSize="18sp" />
 
-</FrameLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="with the world"
+        android:textColor="@color/font"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_firsr_reel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="create your first reel"
+        android:textColor="#357FE8"
+        android:textSize="16sp" />
+
+</LinearLayout>
