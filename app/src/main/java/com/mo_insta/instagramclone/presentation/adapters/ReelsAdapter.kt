@@ -80,6 +80,10 @@ class ReelsAdapter(private val videos: List<Post>) : PagerAdapter() {
                     progressBar.progress = currentPosition
                     if (currentPosition < duration) {
                         handler.postDelayed(this, 50)
+                    }else {
+                        mediaPlayer.seekTo(0)
+                        mediaPlayer.start()
+                        handler.postDelayed(this, 50)
                     }
                 }
             }, 50)
