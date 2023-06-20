@@ -242,27 +242,20 @@
 
             </LinearLayout>
 
-            <HorizontalScrollView
-                android:id="@+id/inner_scroll"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_saved_stories"
                 android:layout_width="match_parent"
-                android:scrollbars="none"
-                android:overScrollMode="never"
                 android:layout_height="wrap_content"
-                app:layout_constraintTop_toBottomOf="@id/profile_buttons_layout">
+                android:layout_marginTop="8dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingVertical="8dp"
+                android:paddingEnd="16dp"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@id/profile_buttons_layout" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_saved_stories"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:clipToPadding="false"
-                    android:orientation="horizontal"
-                    android:overScrollMode="never"
-                    android:paddingVertical="8dp"
-                    android:paddingEnd="16dp"
-                    android:scrollbars="none"
-                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-            </HorizontalScrollView>
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tebLayout"
@@ -272,7 +265,7 @@
                 android:background="@color/background"
                 android:paddingVertical="4dp"
                 android:theme="@style/Base.Widget.Design.TabLayout"
-                app:layout_constraintTop_toBottomOf="@id/inner_scroll"
+                app:layout_constraintTop_toBottomOf="@id/rv_saved_stories"
                 app:tabIconTint="@drawable/tab_icon"
                 app:tabIndicator="@drawable/tab_indicator"
                 app:tabIndicatorColor="@color/font"
