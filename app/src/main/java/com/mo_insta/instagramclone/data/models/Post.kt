@@ -11,5 +11,6 @@ data class Post(
     val shares : Int = 0,
     val isVideo : Boolean = false,
     val video : Int? = null,
-    val image : Int? = null
+    val image : Int? = null,
+    val hours : Int = 2,
 )
