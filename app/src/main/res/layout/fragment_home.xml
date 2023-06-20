@@ -9,6 +9,7 @@
         android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:scrollbarFadeDuration="500"
@@ -19,13 +20,22 @@
 
             >
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:layout_collapseMode="none"
+                app:popupTheme="@style/Theme.InstagramClone" />
+
             <LinearLayout
+                android:id="@+id/toolbar_linear"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/aboutUpperImage"
+                    android:id="@+id/tv_instagram"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:fontFamily="@font/lily_script_one"
@@ -41,6 +51,18 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed" />
 
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:layout_marginEnd="12dp"
+                    android:adjustViewBounds="true"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_down_arrow"
+                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+                    app:tint="@color/font" />
+
                 <View
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
@@ -51,12 +73,12 @@
                     android:id="@+id/iv_notifications"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
-                    android:padding="2dp"
                     android:layout_gravity="center"
+                    android:layout_marginEnd="12dp"
                     android:adjustViewBounds="true"
                     android:background="@android:color/transparent"
+                    android:padding="2dp"
                     android:src="@drawable/ic_heart"
-                    android:layout_marginEnd="12dp"
                     app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
                     app:tint="@color/font" />
 
@@ -66,22 +88,14 @@
                     android:layout_height="35dp"
                     android:layout_gravity="center"
                     android:layout_marginEnd="16dp"
-                    android:padding="2dp"
                     android:adjustViewBounds="true"
-                    android:background="@android:color/transparent"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:padding="2dp"
                     android:src="@drawable/ic_messeges"
                     app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
                     app:tint="@color/font" />
 
             </LinearLayout>
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/my_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
-                app:layout_collapseMode="none"
-                app:popupTheme="@style/Theme.InstagramClone" />
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
