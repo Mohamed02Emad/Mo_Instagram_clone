@@ -140,6 +140,7 @@ class PostsRepository {
 
         return postsList
     }
+
     fun getMyPosts(): ArrayList<Post> {
 
         val post1 = Post(
@@ -346,6 +347,7 @@ class PostsRepository {
 
         return postsList
     }
+
     fun getTimeLinePosts(): ArrayList<Post> {
 
         val post1 = Post(
@@ -508,5 +510,83 @@ class PostsRepository {
         postsList.add(post9)
         postsList.shuffle()
         return postsList
+    }
+
+    fun getExplorePosts(): ArrayList<Int> {
+        val posts = ArrayList<Int>()
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.add(R.drawable.user1)
+        posts.add(R.drawable.user2)
+        posts.add(R.drawable.user3)
+        posts.add(R.drawable.user4)
+        posts.add(R.drawable.user5)
+        posts.add(R.drawable.user6)
+        posts.add(R.drawable.user7)
+        posts.add(R.drawable.user8)
+        posts.add(R.drawable.me1)
+        posts.add(R.drawable.me2)
+        posts.add(R.drawable.me3)
+        posts.add(R.drawable.me4)
+        posts.shuffle()
+        return posts
     }
 }
