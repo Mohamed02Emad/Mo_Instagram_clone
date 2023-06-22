@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+   android:layout_marginTop="16dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@android:color/transparent">
+
+    <LinearLayout
+        android:id="@+id/post_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp">
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_user_image"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:scaleType="centerCrop"
+            android:layout_marginStart="16dp"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+             />
+
+        <TextView
+            android:id="@+id/tv_user_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            tools:text="m_emad02"
+            android:textColor="@color/font"
+            android:textSize="14sp" />
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_three_dots"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="6dp"
+            android:layout_marginEnd="10dp"
+            android:src="@drawable/ic_three_dots"
+            android:background="?android:attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+            app:tint="@color/font" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_image_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="550dp"
+        android:src="@drawable/me2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/transparent"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingVertical="4dp"
+        >
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_likes"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_heart"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+            app:tint="@color/font" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="3dp"
+            android:src="@drawable/ic_comments"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+            app:tint="@color/font" />
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_share"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_share"
+            android:layout_marginEnd="16dp"
+            android:background="?android:attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+            app:tint="@color/font" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            />
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/iv_save_post"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_save"
+            android:background="?android:attr/selectableItemBackground"
+            app:shapeAppearanceOverlay="@style/roundedImageViewRounded_Small"
+            app:tint="@color/font" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/tv_likes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        tools:text="451 likes"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/font"
+        android:textSize="12sp" />
+    <TextView
+        android:id="@+id/tv_caption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        tools:text="451 likes"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/font"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tv_comments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        tools:text="view all 50 comments"
+        android:alpha="0.6"
+        android:layout_marginTop="2dp"
+        android:layout_marginStart="16dp"
+        android:textColor="@color/font"
+        android:textSize="12sp" />
+
+</LinearLayout>
