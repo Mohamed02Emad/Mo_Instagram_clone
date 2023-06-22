@@ -1,6 +1,7 @@
 package com.mo_insta.instagramclone.data.repository
 
 import com.mo_insta.instagramclone.R
+import com.mo_insta.instagramclone.data.models.Post
 import com.mo_insta.instagramclone.data.models.Story
 
 class StoriesRepository() {
@@ -39,4 +40,7 @@ class StoriesRepository() {
         list.add(story6)
         return list
     }
+
+
+
 }

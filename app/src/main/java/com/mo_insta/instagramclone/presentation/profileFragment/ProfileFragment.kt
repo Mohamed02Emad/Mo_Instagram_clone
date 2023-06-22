@@ -22,7 +22,7 @@ import com.mo_insta.instagramclone.utils.showToast
 
 class ProfileFragment : Fragment() {
 
-    private val viewModel: ProfileViewModel by viewModels()
+     val viewModel: ProfileViewModel by viewModels()
     private lateinit var binding: FragmentProfileBinding
     private lateinit var myAdapter: StoriesAdapter
     private lateinit var viewPager: ViewPager2
@@ -30,7 +30,7 @@ class ProfileFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentProfileBinding.inflate(layoutInflater)
         return binding.root
     }

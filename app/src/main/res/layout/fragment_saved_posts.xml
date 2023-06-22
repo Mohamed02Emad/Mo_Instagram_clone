@@ -7,10 +7,11 @@
     tools:context=".presentation.profileFragment.viewPagerFragments.SavedPostsFragment">
 
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_posts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="saved posts" />
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingVertical="8dp" />
 
 </FrameLayout>
